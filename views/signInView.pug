@@ -1,0 +1,31 @@
+extends layout
+
+block content
+ .container
+  br
+  br
+  br
+  .col-sm-8.col-sm-offset-4
+   if(message)
+    each error in message
+     h4=error
+   form(method="post" class='form-horizontal')
+     
+    .form-group
+     .col-sm-2
+      label.label-control(for="UsernameI") اسم المستخدم:
+     .col-sm-6
+      input.form-control(type="text" name='UsernameI' required)
+    .form-group
+     .col-sm-2
+      <label for="PasswordI" > كلمة السر</label>
+     .col-sm-6
+      input.form-control(type="text", name="PasswordI" required)
+    .form-group
+     .col-sm-2.col-sm-offset-4
+      input.btn.btn-primary(type="submit", value="الدخول") 
+      
+  
+
+ 
+

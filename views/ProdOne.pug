@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+ .container
+  .col-sm-8
+   h3=Product.ProdName
+   h5=Product.ProdRate
+   h4=Product.ProdPrice
+   br
+   br
+   p=Product.ProdDesc
+   br
+   .col-sm-10
+    form.form-inline(method="post")
+     .form-group
+      .col-sm-2
+       label.form-label(for="sizeI") الحجم:
+      .col-sm-4
+       select.form-control(name="ProdSizeI")
+        each size in Product.ProdSize
+         option=size
+         
+     .form-group
+      .col-sm-2
+       input.btn.btn-default(type="submit", value="اضافة الى السلة")
+        
+
+  .col-sm-4

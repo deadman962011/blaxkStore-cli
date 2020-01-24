@@ -1,0 +1,59 @@
+extends layout
+
+block content
+ .container
+  br
+  br
+  br
+  .col-sm-8.col-sm-offset-4
+   form(method="post" class='form-horizontal')
+
+    .form-group
+     .col-sm-2
+      label.label-control(for="UsernameI") الاسم الكامل:
+     .col-sm-3
+      input.form-control(type="text" name='FirstNameI' placeholder='الاسم الاول' required)
+     .col-sm-3
+      input.form-control(type="text" name='LastNameI' placeholder='الاسم الاخير' required)
+      
+     
+    .form-group
+     .col-sm-2
+      label.label-control(for="UsernameI") اسم المستخدم:
+     .col-sm-6
+      input.form-control(type="text" name='UsernameI' required)
+    .form-group
+     .col-sm-2
+      label.label-control(for="EmailI") الايميل:
+     .col-sm-6
+      input.form-control(type="email" name='EmailI' required)
+
+    .form-group
+     .col-sm-2
+      <label for="PasswordI" > كلمة السر</label>
+     .col-sm-6
+      input.form-control(type="password", name="PasswordI" required)
+    .form-group
+     .col-sm-2
+      <label for="PasswordI" > تكرار كلمة السر </label>
+     .col-sm-6
+      input.form-control(type="password", name="Password2I" required)
+    .form-group
+     .col-sm-2
+      <label for="PasswordI" > العنوان  </label>
+     .col-sm-6
+      input.form-control(type="text", name="AddressI" required)
+    .form-group
+     .col-sm-2
+      <label for="PhoneNumI" > رقم الهاتف  </label>
+     .col-sm-6
+      input.form-control(type="text", name="PhoneNumI" required)
+
+    .form-group
+     .col-sm-2.col-sm-offset-4
+       input.btn.btn-primary(type="submit", value="الدخول") 
+      
+  
+
+ 
+

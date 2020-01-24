@@ -1,0 +1,74 @@
+extends layout
+
+
+block style
+
+ link(rel="stylesheet", href="http://127.0.0.1/cdn/store/css/style.css")
+
+block content
+ .container
+  .row
+   .col-sm-7
+    .checkOutForm
+     .formTitle
+      h3 معلومات الشحن 
+     form.form-horizontal(method="post")
+      .form-group
+       .col-sm-3
+        label.form-label(for="FirstNameI") الاسم الاول
+       .col-sm-9
+        input.form-control(type="text" name='FirstNameI')
+      .form-group
+       .col-sm-3
+        label.form-label(for="LastNameI") الاسم الاخير
+       .col-sm-9
+        input.form-control(type="text" name='LastNameI')
+      .form-group
+       .col-sm-3
+        label.form-label(for="EmailI") الايميل
+       .col-sm-9
+        input.form-control(type="text" name='EmailI')
+      .form-group
+       .col-sm-3
+        label.form-label(for="AddressI") العنوان
+       .col-sm-9
+        input.form-control(type="text" name='AddressI')
+      .form-group
+       .col-sm-3
+        label.form-label(for="PhoneI") رقم الهاتف
+       .col-sm-9
+        input.form-control(type="text" name='PhoneI')
+
+      .form-group
+       .col-sm-offset-3.col-sm-4
+        input.btn.btn-primary(type="submit" value='ارسال الطلب')
+
+
+
+   .col-sm-5
+    .cartCheckOut
+     h3 طلباتك
+     table.table.table-condensed
+      thead
+       tr
+        th المنتج
+        th الكمية
+        th السعر
+      tbody
+       if(cart)
+        each order in cart
+         tr
+          td
+           h4=order.item.ProdName
+          td
+           h4=order.quantity
+          td
+           h4=order.item.ProdPrice
+        br
+       
+        tr
+         td
+          h2 المبلغ الاجمالي
+         td
+          h2=totalPrice
+

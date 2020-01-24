@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="http://127.0.0.1/cdn/bootstrap/css/bootstrap.min.css", attr)
+        link(rel="stylesheet", href="http://127.0.0.1/cdn/bootstrap/css/bootstrap-rtl.min.css", attr)
+        link(rel="stylesheet", href="http://127.0.0.1/cdn/store/css/style.css")
+        block style
+
+        title home
+    body
+     .header
+      .container
+       .row
+        .col-sm-3
+         h4 icon
+        .col-sm-4
+         h4 search
+        .col-sm-5
+         .dropdown
+           button(type='button',data-toggle="dropdown").dropdown-toggle.btn.btn-primary
+           .cartDropdown(style='width:100%;').dropdown-menu
+             if(cart)
+              each order in cart
+               .cartItem
+                .col-sm-4.col-xs-4
+                 img(src=""+order.item.ProdImages[0].item.imgSrc, style='width:80px' class='' alt="alt")
+                .col-sm-6.col-xs-6
+                 h4=order.item.ProdName
+                 h5=order.quantity 
+                  span X
+                  span=order.item.ProdPrice
+                .col-sm-1.col-xs-1
+                 a(href="/Cart/remove/"+order.item._id ).btn.btn-danger x
+              .cartBtns.col-sm-12
+              .checkOutBtn.col-sm-6.col-xs-6
+                a(href="/cart/checkOut") 
+                 h4 تأكيد الطلبات
+              
+              .cartBtn.col-sm-6.col-xs-6
+                a(href="#") 
+                 h4 سلة المشتريات
+                  
+     .navigation
+      .container
+       ul.list-unstyled.list-inline
+        li.list-inline-item
+         a(href="#") الرئيسية
+        li.list-inline-item 
+         a(href='#') اخر العروض
+        li.list-inline-item
+         a(href="#") تصنيفات
+        li.list-inline-item
+
+     
+     
+
+
+block content
+
+
+script(src="http://127.0.0.1/cdn/jquery/jquery.min.js")
+script(src="http://127.0.0.1/cdn/bootstrap/js/bootstrap.min.js")

@@ -1,0 +1,89 @@
+extends layout
+
+
+
+
+
+
+block style
+
+ link(rel="stylesheet", href="http://127.0.0.1/cdn/store/css/style.css")
+
+
+
+
+
+block content
+
+    .bloxk
+     .contanier
+      .col-sm-12
+       .blaxk-title
+         h4 جديد في المتجر
+       .bloxk-body
+
+         each product in products
+          .col-sm-3
+           .bloxk-product
+            .product-head
+            img.product-img.img-responsive(src=""+product.ProdImages[0].item.imgSrc, alt="alt")
+            .product-body
+             p.product-catigory
+              a(href='#')=product.ProdCatigory
+             a(href='http://127.0.0.1:4000/'+product._id)
+              h3.product-name=product.ProdName
+             h4.product-price=product.ProdPrice
+             .product-rating
+              h5 text
+            .product-bottom
+              .AddToCartBtn
+               a(href='/Cart/Add/'+product._id)
+                h4 اضافة الى السلة 
+                 span
+            
+
+
+      
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
